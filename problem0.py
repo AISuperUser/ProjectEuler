@@ -3,8 +3,7 @@
 # The first 5 square numbers are: 1, 4, 9, 16, 25 , and the sum of the odd squares is
 # 1 + 9 + 25 = 35
 # Among the first 101 thousand square numbers, what is the sum of all the odd squares?
-class Problem0:
-  def calculate_odd_square_sum(square_count):
+def calculate_odd_square_sum(square_count):
     square_sum = 0
     for i in range(0, square_count + 1):
         i_square = i ** 2
@@ -12,4 +11,4 @@ class Problem0:
             square_sum += i_square
     return square_sum
 
-print(Problem0.calculate_odd_square_sum(101000))
+print(calculate_odd_square_sum(101000))
