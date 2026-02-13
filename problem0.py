@@ -5,10 +5,15 @@
 # Among the first 101 thousand square numbers, what is the sum of all the odd squares?
 def calculate_odd_square_sum(square_count):
     square_sum = 0
-    for i in range(0, square_count + 1):
-        i_square = i ** 2
-        if i_square % 2 == 1:
-            square_sum += i_square
+    for i in range(1, square_count + 1, 2):
+        square_sum += i ** 2
     return square_sum
 
-print(calculate_odd_square_sum(101000))
+def calculate_odd_square_sum_improved(square_count):
+    # Only sum odd perfect squares, i.e., squares of odd numbers
+    return sum(i**2 for i in range(1, square_count + 1, 2))
+
+print(calculate_odd_square_sum(5))
+print(calculate_odd_square_sum_improved(5))
+print(calculate_odd_square_sum(101_000))
+print(calculate_odd_square_sum_improved(101_000))
