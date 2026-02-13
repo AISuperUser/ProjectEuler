@@ -2,11 +2,7 @@
 # 3 or 5, we get 3,5,6 and 9. The sum of these multiples is 23.
 # Find the sum of all the multiples of 3 or 5 below 1000.
 def calculate_three_or_five_multiple_sum(target):
-    msum = 0
-    for i in range(target):
-        if check_multiple(i):
-            msum += i
-    return msum
+    return sum(i for i in range(target) if check_multiple(i))
 
 def check_multiple(number):
     return number % 3 == 0 or number % 5 == 0
@@ -18,7 +14,6 @@ def calculate_three_or_five_multiple_improved(target):
 def sum_divisible_by(target, n):
     p = (target - 1) // n # // is integer division!
     return n * p * (p + 1) // 2
-
 
 print('Upper bound 10:', calculate_three_or_five_multiple_sum(10))
 print(calculate_three_or_five_multiple_improved(10))
